@@ -1,14 +1,14 @@
 package br.com.api.escola.escola.model.aluno;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import br.com.api.escola.escola.model.sala.Sala;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -26,12 +26,19 @@ public class Aluno {
 
 
 
+
+    @ManyToMany(mappedBy = "alunos")
+    private List<Sala> salas;
+
+
+
+
+
     public Aluno(DadosCadastroAluno dados){
-        this.id = dados.id();;
-        this.nome = dados.nome();
+    this.nome = dados.nome();
+
 
     }
-
 
 
 

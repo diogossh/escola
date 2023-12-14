@@ -4,4 +4,7 @@ public record DadosCadastroSala(
         Long id,
         String nome_sala
 ) {
+
+
+
 }
